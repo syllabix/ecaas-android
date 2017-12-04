@@ -11,8 +11,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val localMove = MoveTypeImpl("Local", "0.05", "0.06")
-    private val intlMove = MoveTypeImpl("International", multiplier = "0.25", taxRate = "0.31")
+    //TODO: create example local and intl models
 
     private var selectedMoveType: MoveType? = null
         set(value) {
@@ -38,32 +37,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         localMoveButton.setOnClickListener {
-            selectedMoveType = localMove
-
+            //TODO: set selected move type for local
         }
 
         intlMoveButton.setOnClickListener {
-            selectedMoveType = intlMove
+            //TODO: set selected move type for international
         }
     }
 
     private fun updateEstimate() {
-        val totalHours = estimatedHours.text.toString().toDouble()
-        val rate = hourlyRate.text.toString()
-        val date = moveDate.text.toString()
-        val jobDetails = Ecaas.newJobDetails(totalHours, rate, date)
-        val newTotal = Ecaas.calculateTotalCost(jobDetails, selectedMoveType)
-        estimateTotal.text = "${newTotal.low} - ${newTotal.high}"
+        //Integrate with Ecaas calculation service
     }
 
 
-    inner class MoveTypeImpl (
-            private val name: String,
-            private val multiplier: String,
-            private val taxRate: String
-    ): MoveType {
-        override fun getName() = name
-        override fun getMultiplier() = multiplier
-        override fun getTaxRate() = taxRate
-    }
+    //Implement the Ecaas Move Type
 }
