@@ -32,16 +32,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        estimateTotalButton.setOnClickListener {
-            updateEstimate()
-        }
-
         localMoveButton.setOnClickListener {
             //TODO: set selected move type for local
         }
 
         intlMoveButton.setOnClickListener {
             //TODO: set selected move type for international
+        }
+
+        estimateTotalButton.setOnClickListener {
+            updateEstimate()
         }
     }
 
