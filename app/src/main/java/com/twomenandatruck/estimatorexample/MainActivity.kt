@@ -3,7 +3,6 @@ package com.twomenandatruck.estimatorexample
 import android.content.res.ColorStateList
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import ecaas.Ecaas
 import ecaas.MoveType
 import kotlinx.android.synthetic.main.activity_main.*
